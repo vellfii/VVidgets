@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "vvidgets",
+  "version": "${version}",
+  "name": "VVidgets",
+  "description": "Custom widgets library, primarily used in screens.",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/vvidgets/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "fabric-datagen": [
+      "net.velli.vvidgets.client.VVidgetsDataGenerator"
+    ],
+    "client": [
+      "net.velli.vvidgets.client.VVidgetsClient"
+    ],
+    "main": [
+      "net.velli.vvidgets.VVidgets"
+    ]
+  },
+  "mixins": [
+    "vvidgets.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
