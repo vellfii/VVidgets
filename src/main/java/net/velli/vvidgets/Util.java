@@ -1,4 +1,4 @@
-package net.velli.vvidgets.widgets;
+package net.velli.vvidgets;
 
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.text.*;

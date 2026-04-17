@@ -2,21 +2,19 @@ package net.velli.vvidgets.widgets.container;
 
 import net.minecraft.client.gui.DrawContext;
 
-public class BasicContainerWidget extends ContainerWidget {
-
+public class ListContainerWidget extends ContainerWidget {
     @Override
-    public BasicContainerWidget getSelf() {
+    public ContainerWidget getSelf() {
         return this;
     }
 
     @Override
     protected void onRender(DrawContext context, float delta) {
-        context.fill(0, 0, width(), height(), 0x99000000);
         renderChildren(context);
     }
 
     @Override
-    public void onHover(int mouseX, int mouseY, boolean active) {
+    protected void onHover(int mouseX, int mouseY, boolean active) {
         hoverChildren(mouseX, mouseY, active);
     }
 }
