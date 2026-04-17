@@ -4,9 +4,17 @@ import net.minecraft.client.gui.DrawContext;
 import net.velli.vvidgets.widgets.interfaces.ClickableWidget;
 
 public class ButtonWidget extends Widget<ButtonWidget> implements ClickableWidget {
+
+    private ClickProcessor processor;
+
     @Override
     public ButtonWidget getSelf() {
         return this;
+    }
+
+    public ButtonWidget withProcessor(ClickProcessor processor) {
+        this.processor = processor;
+        return getSelf();
     }
 
     @Override
@@ -26,19 +34,15 @@ public class ButtonWidget extends Widget<ButtonWidget> implements ClickableWidge
 
     @Override
     public void onClick(int mouseX, int mouseY) {
-        if (hovered()) {
-            System.out.println("clicked on button");
-        } else {
-            System.out.println("clicked off button");
+        if (processor != null) {
+            processor.onClick(getSelf(), mouseX, mouseY);
         }
     }
 
     @Override
     public void onRelease(int mouseX, int mouseY) {
-        if (hovered()) {
-            System.out.println("released on button");
-        } else {
-            System.out.println("released off button");
+        if (processor != null) {
+            processor.onRelease(getSelf(), mouseX, mouseY);
         }
     }
 }
