@@ -20,7 +20,7 @@ public class ListContainerWidget extends ContainerWidget {
     int itemPadding = 2;
 
     public ListContainerWidget() {
-        // addColumns(1);
+        addColumns(1);
     }
 
     @Override

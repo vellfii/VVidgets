@@ -7,8 +7,13 @@ public interface ClickableWidget {
     void onRelease(int mouseX, int mouseY);
 
     interface ClickProcessor {
-        // These run on ANY press, not just ones where the widget is hovered.
+        /**
+        Runs on ANY press, not just ones where the widget is hovered.
+         */
         void onClick(Widget<?> widget, int mouseX, int mouseY);
+        /**
+         Runs on ANY release, not just ones where the widget is hovered.
+         */
         void onRelease(Widget<?> widget, int mouseX, int mouseY);
     }
 }
